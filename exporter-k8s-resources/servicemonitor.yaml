@@ -1,0 +1,15 @@
+apiVersion: monitoring.coreos.com/v1
+kind: ServiceMonitor
+metadata:
+  labels:
+    app: opa-exporter
+  name: opa-exporter
+  namespace: opa-exporter
+spec:
+  endpoints:
+  - port: 9141-9141
+    scheme: http
+  selector:
+    matchLabels:
+      app: opa-exporter
+ 
